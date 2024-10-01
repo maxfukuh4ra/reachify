@@ -9,13 +9,28 @@ This project automates scraping LinkedIn profiles, generating personalized messa
 
 ## Prerequisites
 - **Python 3.x**
-- **Selenium** with Chrome WebDriver
-- **OpenAI API Key**
-- **Gmail App Password**
+- **Selenium** with Chrome WebDriver: automates web browser interaction.
+- **OpenAI API Key**: generates personalized messages based on profile data.
+- **Beautiful Soup4**: parses the HTML to extract data.
+- **Gmail App Password**: allows logging into gmail account to send email
 
-### Required Python Libraries
-You can install all the required libraries by running:
+## Set-Up Instructions
+**1. Clone to repository**
+```bash
+git clone https://github.com/maxfukuh4ra/coldoutreach.git
+cd linkedin-scraper
+```
+**2. Install required libraries**
 ```bash
 pip install -r requirements.txt
-
-
+```
+**3. Edit the .env file with your credentials:**
+**Create a LinkedIn App Password:**
+- Go to your Google Account settings.
+- Navigate to Security and turn on 2-Step Verification.
+- After that, you will be able to create App Passwords.
+**4. Prepare the LinkedIn Profiles**: add LinkedIn profile URLs to a linkedin_profiles.csv file (one URL per line) in the project directory.
+**5. Run the Script**:
+```bash
+python main.py
+```
