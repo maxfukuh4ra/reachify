@@ -2,6 +2,7 @@ import pandas as pd
 from linkedinscraping import setup_driver, login_linkedin, scrape_profile
 from message_generator import generate_personalized_message
 import getpass
+from send_email import send_email
 
 # set up selenium driver
 driver_path = './chromedriver-mac-arm64/chromedriver'
@@ -24,9 +25,10 @@ for url in urls:
     # scrap each profile
     profile_data = scrape_profile(url, driver)
     if profile_data:
-        # generate personalized message
+        # generate personalized message 
         personalized_message = generate_personalized_message(profile_data, your_name)
-        print(f'Personalized Message for {profile_data["name"]}:\n{personalized_message}\n')
+        print(profile_data['email'])
+        send_email(profile_data['email'], 'Request to Connect', personalized_message)
 
-# Close the browser after scraping
+
 driver.quit()
