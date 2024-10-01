@@ -5,7 +5,7 @@ import getpass
 from send_email import send_email
 
 # set up selenium driver
-driver_path = './chromedriver-mac-arm64/chromedriver'
+driver_path = './chromedriver'
 driver = setup_driver(driver_path)
 
 # log into linkedin
