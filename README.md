@@ -27,13 +27,13 @@ pip install -r requirements.txt
 ```
 
 **3. Edit the .env file with your credentials:**
+
 **Create a LinkedIn App Password:**
-- Go to your Google Account settings.
-- Navigate to Security and turn on 2-Step Verification.
-- After that, you will be able to create App Passwords. Copy paste this into the .env.
+1. Go to your Google Account settings.
+2.  Navigate to Security and turn on 2-Step Verification.
+3.  After that, you will be able to create App Passwords. Copy paste this into the .env.
 **Create an OpenAI key:**
 1. Create an OpenAI Account: visit [OpenAI's website](https://beta.openai.com/signup/) to sign up for an account.
-2. Generate an API Key
 1. After signing up, go to your [API Keys page](https://platform.openai.com/account/api-keys).
 2. Click on **"Create new secret key"**.
 3. Copy the generated API key. **Note:** You will only see this key once, so be sure to copy it immediately.
