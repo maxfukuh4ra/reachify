@@ -82,4 +82,21 @@ def scrape_profile(url, driver):
                 }
     profile_data['experience_details'] = experience_details
 
+
+    # email section requires the open the contact card first
+    contact_info_url = f"{url}/overlay/contact-info/"
+    driver.get(contact_info_url)
+    time.sleep(3)
+
+    # re-parse
+    page_source = driver.page_source
+    soup = BeautifulSoup(page_source, 'html.parser')
+
+    email_section = soup.find('h3', class_='pv-contact-info__header t-16 t-black t-bold')
+    if email_section:
+        email_tag = email_section.find_next('a', href=lambda x: x and x.startswith('mailto:'))
+        if email_tag:
+            email_text = email_tag.get_text(strip=True)
+            profile_data['email'] = email_text
+
     return profile_data
